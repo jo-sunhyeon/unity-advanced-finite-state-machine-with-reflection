@@ -31,8 +31,8 @@ public class FiniteStateMachine<TState> : IFiniteStateMachine where TState : Enu
 
     private void CacheMethod()
     {
-        var methodInfos = monoBehaviour.GetType().GetMethods(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
-        foreach (var methodInfo in methodInfos)
+        MethodInfo[] methodInfos = monoBehaviour.GetType().GetMethods(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
+        foreach (MethodInfo methodInfo in methodInfos)
         {
             foreach (TState state in Enum.GetValues(typeof(TState)))
             {

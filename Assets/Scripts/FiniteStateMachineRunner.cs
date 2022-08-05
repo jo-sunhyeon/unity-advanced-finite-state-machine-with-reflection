@@ -9,7 +9,7 @@ public class FiniteStateMachineRunner : MonoBehaviour
 
     public FiniteStateMachine<TState> Initialize<TState>(MonoBehaviour monoBehaviour, TState initialState) where TState : Enum
     {
-        var finiteStateMachine = new FiniteStateMachine<TState>(monoBehaviour, initialState);
+        FiniteStateMachine<TState> finiteStateMachine = new FiniteStateMachine<TState>(monoBehaviour, initialState);
         this.finiteStateMachine = finiteStateMachine;
         return finiteStateMachine;
     }
